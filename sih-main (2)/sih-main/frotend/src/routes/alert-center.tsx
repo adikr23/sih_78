@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { AlertCenterPage } from "@/components/pages/dashboard-pages";
+export const Route = createFileRoute("/alert-center")({ head: () => ({ meta: [{title:"Alert Center — STORMTRACE-GNN"},{name:"description",content:"Filter and inspect authoritative persisted weather anomaly alerts."},{property:"og:title",content:"Alert Center — STORMTRACE-GNN"},{property:"og:description",content:"Filter and inspect authoritative persisted weather anomaly alerts."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}] }), component: AlertCenterPage });

@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { VerificationPage } from "@/components/pages/dashboard-pages";
+export const Route = createFileRoute("/verification")({ head: () => ({ meta: [{title:"Model Verification — STORMTRACE-GNN"},{name:"description",content:"Review backend-provided alert, severity and physics aggregates."},{property:"og:title",content:"Model Verification — STORMTRACE-GNN"},{property:"og:description",content:"Review backend-provided alert, severity and physics aggregates."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}] }), component: VerificationPage });

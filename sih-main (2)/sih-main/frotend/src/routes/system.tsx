@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SystemPage } from "@/components/pages/dashboard-pages";
+export const Route = createFileRoute("/system")({ head: () => ({ meta: [{title:"System & API — STORMTRACE-GNN"},{name:"description",content:"Inspect backend health, jobs, endpoints and pipeline JSON output."},{property:"og:title",content:"System & API — STORMTRACE-GNN"},{property:"og:description",content:"Inspect backend health, jobs, endpoints and pipeline JSON output."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}] }), component: SystemPage });

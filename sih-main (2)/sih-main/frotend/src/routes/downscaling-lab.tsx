@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { DownscalingPage } from "@/components/pages/dashboard-pages";
+export const Route = createFileRoute("/downscaling-lab")({ head: () => ({ meta: [{title:"Downscaling Lab — STORMTRACE-GNN"},{name:"description",content:"Compare U-Net and conditional diffusion extreme-value preservation."},{property:"og:title",content:"Downscaling Lab — STORMTRACE-GNN"},{property:"og:description",content:"Compare U-Net and conditional diffusion extreme-value preservation."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}] }), component: DownscalingPage });

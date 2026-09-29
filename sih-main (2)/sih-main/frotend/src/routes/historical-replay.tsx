@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { ReplayPage } from "@/components/pages/dashboard-pages";
+export const Route = createFileRoute("/historical-replay")({ head: () => ({ meta: [{title:"Historical Replay — STORMTRACE-GNN"},{name:"description",content:"Run reproducible historical demonstration cases through the complete pipeline."},{property:"og:title",content:"Historical Replay — STORMTRACE-GNN"},{property:"og:description",content:"Run reproducible historical demonstration cases through the complete pipeline."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}] }), component: ReplayPage });

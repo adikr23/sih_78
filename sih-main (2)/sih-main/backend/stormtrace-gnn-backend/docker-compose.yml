@@ -1,0 +1,47 @@
+﻿version: "3.9"
+services:
+  db:
+    image: postgres:16
+    container_name: stormtrace-gnn-db
+    environment:
+      POSTGRES_USER: stormtrace
+      POSTGRES_PASSWORD: stormtrace
+      POSTGRES_DB: stormtrace
+    ports:
+      - "5432:5432"
+    volumes:
+      - stormtrace_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U stormtrace"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: stormtrace-redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - stormtrace_redisdata:/data
+
+  backend:
+    build: .
+    container_name: stormtrace-gnn-backend
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    environment:
+      DATABASE_URL: postgresql://stormtrace:stormtrace@db:5432/stormtrace
+      JOB_STORE_BACKEND: redis
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --workers 1
+
+volumes:
+  stormtrace_pgdata:
+  stormtrace_redisdata:

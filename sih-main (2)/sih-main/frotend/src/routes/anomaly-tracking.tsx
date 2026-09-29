@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { TrackingPage } from "@/components/pages/dashboard-pages";
+export const Route = createFileRoute("/anomaly-tracking")({ head: () => ({ meta: [{title:"Anomaly Tracking — STORMTRACE-GNN"},{name:"description",content:"Inspect EFI, spherical message passing and 4D anomaly trajectories."},{property:"og:title",content:"Anomaly Tracking — STORMTRACE-GNN"},{property:"og:description",content:"Inspect EFI, spherical message passing and 4D anomaly trajectories."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}] }), component: TrackingPage });

@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { LiveAnalysisPage } from "@/components/pages/dashboard-pages";
+export const Route = createFileRoute("/live-analysis")({ head: () => ({ meta: [{title:"Live Analysis — STORMTRACE-GNN"},{name:"description",content:"Run and monitor the asynchronous STORMTRACE analysis pipeline."},{property:"og:title",content:"Live Analysis — STORMTRACE-GNN"},{property:"og:description",content:"Run and monitor the asynchronous STORMTRACE analysis pipeline."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}] }), component: LiveAnalysisPage });

@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PhysicsPage } from "@/components/pages/dashboard-pages";
+export const Route = createFileRoute("/physics-validation")({ head: () => ({ meta: [{title:"Physics Validation — STORMTRACE-GNN"},{name:"description",content:"Review ensemble agreement and moisture-convergence consistency."},{property:"og:title",content:"Physics Validation — STORMTRACE-GNN"},{property:"og:description",content:"Review ensemble agreement and moisture-convergence consistency."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}] }), component: PhysicsPage });
